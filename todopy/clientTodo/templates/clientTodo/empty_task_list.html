@@ -1,0 +1,19 @@
+{% load static %}
+
+<!-- Форма добавления карты -->
+<div class="empty-item">
+    <form action="{% url 'clientTodo:add-card' %}" method="POST" id="form{{ j }}">
+        {% csrf_token %}
+
+        <input type="hidden" name="year" value="{{ year }}">
+        <input type="hidden" name="month" value="{{ month }}">
+        <input type="hidden" name="day" value="{{ j }}">
+
+        <div class="field">
+            <input type="submit" id="input-submit{{ j }}" class="input-submit" form="form{{ j }}">
+            <label for="input-submit{{ j }}">
+                <img src="{% static 'icons/plus.svg' %}" alt="">
+            </label>
+        </div>
+    </form>
+</div>

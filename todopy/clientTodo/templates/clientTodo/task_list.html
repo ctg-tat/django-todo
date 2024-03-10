@@ -1,0 +1,38 @@
+{% load static %}
+
+<div class="item">
+    <!-- Список задач -->
+    <div class="tasks-list" id="task-list">
+        {% for z in x.task_set.all %}
+            <div class="field">
+                <input type="checkbox" id="checkbox-{{ z.id }}"
+                       onchange="text_decoration(this)">
+                <label for="checkbox-{{ z.id }}">{{ z.name }}</label>
+            </div>
+        {% endfor %}
+
+
+        <!-- Форма добавления задач -->
+        <form method="POST"
+              action="{% url 'clientTodo:add-task' x.id %}"
+              id="form-add-todo"
+              onsubmit="return createTodo(this, {{ x.id }})">
+            {% csrf_token %}
+            <input type="text" name="name" id="input-add-todo" required>
+        </form>
+
+        <div class="field" onclick="showForm(this)">
+            <img src="{% static 'icons/plus.svg' %}" alt="">
+            <p class="new-todo">Новая задача</p>
+        </div>
+    </div>
+    <div class="header-item">
+        <p class="current-date">{{ x.date|date:"d F" }}</p>
+
+        <div class="icons">
+            <a href="{% url 'clientTodo:delete' x.id %}">
+                <img src="{% static 'icons/delete.svg' %}" alt="">
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,283 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Nunito, serif;
+
+    background-color: #fff;
+}
+
+a{
+    text-decoration: none;
+    color: unset;
+}
+
+ul li{
+    list-style: none;
+}
+
+/* Header */
+
+header{
+    padding: 10px;
+    flex: 1;
+}
+
+.wrapper{
+    max-width: 97%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-container{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-image{
+    width: 55px;
+    height: 100%;
+}
+
+.user-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    border: 2px solid #babaeb;
+    border-radius: 50%;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.user-name{
+    font-size: 14px;
+    color: #9e9e9e;
+}
+
+.user-welcome{
+    font-size: 16px;
+}
+
+/* Main */
+
+main{
+    flex: 5;
+    background-color: #E9E9F1;
+    /*min-height: calc(100vh - 60px);*/
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.current-progress{
+    border-radius: 10px;
+
+    padding: 20px;
+    background-color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    width: 35%;
+}
+
+.expected-result{
+    width: 100%;
+    background-color: #e2e2e2;
+    height: 5px;
+    border-radius: 5px;
+}
+
+.current-result{
+    background-color: #babaeb;
+    height: 5px;
+    border-radius: 5px;
+}
+
+.subtext{
+    font-size: 16px;
+    color: #3b3b3b;
+}
+
+/* Header main */
+
+.main-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-header form{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: fit-content;
+
+    background-color: #ffffff;
+
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.input-submit{
+    display: none;
+}
+
+input{
+    border: none;
+    font-family: Nunito, serif;
+    font-size: 14px;
+    outline: none;
+    padding: 10px 0;
+}
+
+input[type="submit"]{
+    border: none;
+    border-radius: 5px;
+
+    font-family: Nunito, serif;
+    font-size: 14px;
+
+    outline: none;
+    padding: 10px;
+
+    background-color: #3b3b3b;
+    color: #ffffff;
+}
+
+.item {
+    background-color: #ffffff;
+    padding: 16px 20px 16px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+}
+
+.empty-item{
+    background-color: #ffffff;
+    padding: 16px 20px 16px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+}
+
+.days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+
+    max-height: max-content;
+}
+
+.week{
+    margin: 20px 0 10px 0;
+    font-size: 18px;
+}
+
+.header-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.current-date{
+    font-size: 14px;
+    color: #9e9e9e;
+}
+
+.tasks-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.field{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 16px;
+}
+
+.field label{
+    word-break: break-word;
+}
+
+.new-todo{
+    font-size: 14px;
+    color: #9e9e9e;
+}
+
+#form-add-todo{
+    display: none;
+}
+
+#form-add-todo input{
+    border: 1px solid #eaeaea;
+    padding: 5px;
+    width: 100%;
+}
+
+.input-add-todo{
+    border: 1px solid #eaeaea;
+    padding: 5px;
+    width: 100%;
+}
+
+.task-done{
+    text-decoration: line-through;
+}
+
+.icons a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Modal window */
+
+/*.modal{*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background-color: rgba(186, 186, 235, 0.63);*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    position: fixed;*/
+/*}*/
+
+/*.window{*/
+/*    width: 400px;*/
+/*    height: 500px;*/
+/*    background-color: white;*/
+/*    border-radius: 10px;*/
+/*}*/
+
+
+
+
+

@@ -1,0 +1,13 @@
+{% for j in i %}
+    <div class="day">
+        {% if j %}
+            {% if tasks|get_item:j %}
+                {% for x in tasks|get_item:j %}
+                    {% include 'clientTodo/task_list.html' %}
+                {% endfor %}
+            {% else %}
+                {% include 'clientTodo/empty_task_list.html' %}
+            {% endif %}
+        {% endif %}
+    </div>
+{% endfor %}

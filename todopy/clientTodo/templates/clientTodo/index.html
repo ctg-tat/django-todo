@@ -1,0 +1,69 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <title>To-do</title>
+</head>
+<body>
+<div id="id">
+{#    <header>#}
+{#        <div class="wrapper">#}
+{#            <div class="user-container">#}
+{#                <div class="user-image">#}
+{#                    <img src="{% static 'images/user.jpg' %}" alt="">#}
+{#                </div>#}
+{##}
+{#                <div class="user-info">#}
+{#                    <p class="user-welcome">Рады вас видеть!</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </header>#}
+
+    <main>
+        <div class="wrapper">
+            <div class="main-header">
+                <form action="{% url 'clientTodo:index' %}" method="POST">
+                    {% csrf_token %}
+                    <input type="month" name="month" placeholder="Search...">
+
+                    <div class="field">
+                        <input type="submit" value="Поиск">
+                    </div>
+                </form>
+            </div>
+
+            <div class="days week">
+                <div class="day">Понедельник</div>
+                <div class="day">Вторник</div>
+                <div class="day">Среда</div>
+                <div class="day">Четверг</div>
+                <div class="day">Пятница</div>
+                <div class="day">Суббота</div>
+                <div class="day">Воскресенье</div>
+            </div>
+
+            {% for i in calendar_arr %}
+                <div class="days">
+                    {% include "clientTodo/calendar.html" %}
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+</div>
+</body>
+</html>
